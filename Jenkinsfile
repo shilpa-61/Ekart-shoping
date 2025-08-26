@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/TechWithSajan/E.git'
+                git branch: 'main', url: 'https://github.com/TechWithSajan/Ekart-shoping.git'
             }
         }
 

@@ -52,7 +52,7 @@ pipeline {
                 sh "mvn package -DskipTests=true"
             }
         }
-/*
+
         stage('deploy to Nexus') {
             steps {
                 withMaven(globalMavenSettingsConfig: 'global-maven', jdk: 'jdk-17', maven: 'maven3', mavenSettingsConfig: '', traceability: true) {
@@ -60,7 +60,7 @@ pipeline {
                 }
             }
         }
-         */      
+        
 
         stage('build and Tag docker image') {
             steps {
@@ -82,7 +82,7 @@ pipeline {
         stage('EKS and Kubectl configuration'){
             steps{
                 script{
-                    sh 'aws eks update-kubeconfig --region ap-south-1 --name ankit-cluster'
+                    sh 'aws eks update-kubeconfig --region ap-south-1 --name Tech-data-cluster'
                 }
             }
         }

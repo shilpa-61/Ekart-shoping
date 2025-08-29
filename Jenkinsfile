@@ -65,7 +65,7 @@ pipeline {
         stage('build and Tag docker image') {
             steps {
                 script {
-                        sh "docker build -t techdatainfinity/Ekart-shoping:latest -f docker/Dockerfile ."
+                        sh "docker build -t techdatainfinity/ekart-shoping:latest -f docker/Dockerfile ."
                     }
             }
         }
@@ -75,7 +75,7 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u techdatainfinity -p ${dockerhubpwd}'}
-                   sh 'docker push techdatainfinity/Ekart-shoping:latest'
+                   sh 'docker push techdatainfinity/ekart-shoping:latest'
                 }
             }
         }

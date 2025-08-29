@@ -5,16 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: ekart
+      app: Ekart-shoping
   replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
-        app: ekart
+        app: Ekart-shoping
     spec:
       containers:
-        - name: ekart
-          image: techdatainfinity/ekart:latest # Image that will be used to containers in the cluster
+        - name: Ekart-shoping
+          image: techdatainfinity/Ekart-shoping :latest # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8070 # The port that the container is running on in the cluster
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: ekart-ssvc
+  name: Ekart-shoping-ssvc
 spec:
   selector:
-    app: ekart
+    app: Ekart-shoping
   ports:
     - protocol: "TCP"
       port: 8070 # The port that the service is running on in the cluster

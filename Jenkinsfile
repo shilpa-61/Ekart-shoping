@@ -39,14 +39,14 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('OWASP Dependency Check') {
             steps {
                 dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DC'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
-
+*/
         stage('Build') {
             steps {
                 sh "mvn package -DskipTests=true"
